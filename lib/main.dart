@@ -1,6 +1,8 @@
 //material.dart has a lot of built-in widgets
 import 'package:flutter/material.dart';
 
+import './question.dart'; 
+
 //First function that Dart and Flutter read
 //runApp is a function provided by material.dart
 void main() => runApp(MyApp());
@@ -12,20 +14,20 @@ class MyApp extends StatefulWidget {
   // So that means, that we can return it. And with that complete, the two pieces are connected.
   @override
   State<StatefulWidget> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
 //State<MyApp> means that the class MyAppState belongs to My App
-class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     //setState is a function that makes Flutter re-render the user interface
     setState(() {
-      questionIndex++;
+      _questionIndex++;
     });
-    print(questionIndex);
+    print(_questionIndex);
    
   }
 
@@ -43,18 +45,18 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(questions.elementAt(questionIndex)),
+            Question(questions[_questionIndex]),
             RaisedButton(
               child: Text('Aswer 1'),
-              onPressed: answerQuestion, //use just the name without parentheses
+              onPressed: _answerQuestion, //use just the name without parentheses
             ),
             RaisedButton(
               child: Text('Aswer 2'),
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
             ),
             RaisedButton(
               child: Text('Aswer 3'),
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
             ),
           ],
         ),
