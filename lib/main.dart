@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Question(questions[_questionIndex]),
+            Question(questionText: questions[_questionIndex]),
             RaisedButton(
               child: Text('Aswer 1'),
               onPressed: _answerQuestion, //use just the name without parentheses
