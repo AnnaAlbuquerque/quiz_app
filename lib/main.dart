@@ -1,7 +1,8 @@
 //material.dart has a lot of built-in widgets
 import 'package:flutter/material.dart';
 
-import './question.dart'; 
+import './question.dart';
+import './answer.dart';
 
 //First function that Dart and Flutter read
 //runApp is a function provided by material.dart
@@ -28,7 +29,6 @@ class _MyAppState extends State<MyApp> {
       _questionIndex++;
     });
     print(_questionIndex);
-   
   }
 
   //BuildContext is a special object type provided by Flutter
@@ -46,18 +46,10 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: <Widget>[
             Question(questionText: questions[_questionIndex]),
-            RaisedButton(
-              child: Text('Aswer 1'),
-              onPressed: _answerQuestion, //use just the name without parentheses
-            ),
-            RaisedButton(
-              child: Text('Aswer 2'),
-              onPressed: _answerQuestion,
-            ),
-            RaisedButton(
-              child: Text('Aswer 3'),
-              onPressed: _answerQuestion,
-            ),
+            //We are passing the _answerQuestion function and this is called callback, since the receiving widget calls this function in the future
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
           ],
         ),
       ),
