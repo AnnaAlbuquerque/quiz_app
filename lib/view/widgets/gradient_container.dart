@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/view/utils/quiz_colors.dart';
+import 'package:quiz_app/utils/quiz_colors.dart';
 
 class GradientContainer extends StatelessWidget {
   final Widget? child;

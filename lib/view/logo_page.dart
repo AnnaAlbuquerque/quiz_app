@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/utils/quiz_colors.dart';
 import 'package:quiz_app/view/questions_page.dart';
-import 'package:quiz_app/view/utils/quiz_colors.dart';
 import 'package:quiz_app/view/widgets/gradient_container.dart';
 
 class LogoPage extends StatefulWidget {
