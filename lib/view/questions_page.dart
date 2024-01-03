@@ -11,12 +11,23 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
+  int currentIndex = 0;
+
+  void answerQuestion() {
+    if (currentIndex < questions.length - 1) {
+      setState(() {
+        currentIndex++;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GradientContainer(
         child: QuestionWidget(
-          questionModel: questions.first,
+          questionModel: questions[currentIndex],
+          answerQuestion: answerQuestion,
         ),
       ),
     );

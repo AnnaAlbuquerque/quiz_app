@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/utils/quiz_colors.dart';
 import 'package:quiz_app/view/questions_page.dart';
 import 'package:quiz_app/view/widgets/gradient_container.dart';
@@ -26,11 +27,12 @@ class _LogoPageState extends State<LogoPage> {
               color: QuizColors.lightPurpleWithTransparency,
             ),
             const SizedBox(height: 65),
-            const Text(
+            Text(
               'Learn Flutter the fun way !',
-              style: TextStyle(
+              style: GoogleFonts.lato(
                 fontSize: 20,
                 color: QuizColors.lightPurple,
+                fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 30),

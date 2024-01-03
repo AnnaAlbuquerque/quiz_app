@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/models/question_model.dart';
 import 'package:quiz_app/utils/quiz_colors.dart';
 import 'package:quiz_app/view/widgets/answer_widget.dart';
 
 class QuestionWidget extends StatelessWidget {
   final QuestionModel questionModel;
+  final VoidCallback? answerQuestion;
   const QuestionWidget({
-    Key? key,
     required this.questionModel,
+    this.answerQuestion,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -20,20 +23,31 @@ class QuestionWidget extends StatelessWidget {
         children: [
           Text(
             questionModel.question,
-            style: const TextStyle(
+            textAlign: TextAlign.center,
+            style: GoogleFonts.lato(
+              fontSize: 20,
               color: QuizColors.lightPurple,
-              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(
             height: 50,
           ),
           Column(
-            children: questionModel.options
-                .map(
-                  (answer) => AnswerWidget(answer: answer),
-                )
-                .toList(),
+            children: [
+              ...questionModel
+                  .getShuffledAnswers()
+                  .map(
+                    (answer) => Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: AnswerWidget(
+                        answer: answer,
+                        onPressed: answerQuestion,
+                      ),
+                    ),
+                  )
+                  .toList()
+            ],
           )
         ],
       ),
