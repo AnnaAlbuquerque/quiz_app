@@ -6,10 +6,10 @@ import 'package:quiz_app/view/widgets/answer_widget.dart';
 
 class QuestionWidget extends StatelessWidget {
   final QuestionModel questionModel;
-  final VoidCallback? answerQuestion;
+  final void Function(String answer) answerQuestion;
   const QuestionWidget({
     required this.questionModel,
-    this.answerQuestion,
+    required this.answerQuestion,
     Key? key,
   }) : super(key: key);
 
@@ -42,7 +42,9 @@ class QuestionWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 10),
                       child: AnswerWidget(
                         answer: answer,
-                        onPressed: answerQuestion,
+                        onPressed: () {
+                          answerQuestion(answer);
+                        },
                       ),
                     ),
                   )

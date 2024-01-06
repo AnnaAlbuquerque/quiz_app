@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/utils/quiz_colors.dart';
 import 'package:quiz_app/view/questions_page.dart';
 import 'package:quiz_app/view/widgets/gradient_container.dart';
+import 'package:quiz_app/view/widgets/quiz_button_widget.dart';
 
 class LogoPage extends StatefulWidget {
   const LogoPage({Key? key}) : super(key: key);
@@ -36,18 +37,9 @@ class _LogoPageState extends State<LogoPage> {
               ),
             ),
             const SizedBox(height: 30),
-            OutlinedButton.icon(
-              style: OutlinedButton.styleFrom(
-                foregroundColor: QuizColors.lightPurple,
-                side: const BorderSide(
-                  width: 2.0,
-                  color: QuizColors.lightPurpleWithTransparency,
-                ),
-              ),
-              icon: const Icon(Icons.arrow_forward),
-              label: const Text(
-                'Start Quiz',
-              ),
+            QuizButtonWidget(
+              buttonText: 'Start Quiz',
+              icon: Icons.arrow_forward,
               onPressed: () {
                 Navigator.push(
                   context,
@@ -56,7 +48,7 @@ class _LogoPageState extends State<LogoPage> {
                   ),
                 );
               },
-            ),
+            )
           ],
         ),
       ),
