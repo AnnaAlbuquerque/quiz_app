@@ -35,8 +35,7 @@ class QuestionWidget extends StatelessWidget {
           ),
           Column(
             children: [
-              ...questionModel
-                  .getShuffledAnswers()
+              ...questionModel.shuffledAnswers
                   .map(
                     (answer) => Padding(
                       padding: const EdgeInsets.only(bottom: 10),

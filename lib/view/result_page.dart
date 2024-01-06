@@ -19,7 +19,7 @@ class ResultPage extends StatefulWidget {
 }
 
 class _ResultPageState extends State<ResultPage> {
-  List<Map<String, dynamic>> getSummaryData() {
+  List<Map<String, dynamic>> get summaryData {
     final List<Map<String, dynamic>> summary = [];
 
     for (int i = 0; i < widget.selectedAnswers.length; i++) {
@@ -35,11 +35,10 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    final summary = getSummaryData();
+    final summary = summaryData;
     final numTotalQuestions = questions.length;
-    final numCorrectQuestions = summary.where((data) {
-      return data['correct_answer'] == data['user_answer'];
-    }).length;
+    final numCorrectQuestions =
+        summary.where((data) => data['correct_answer'] == data['user_answer']).length;
 
     return Scaffold(
       body: GradientContainer(

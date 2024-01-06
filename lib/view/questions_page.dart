@@ -12,11 +12,11 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
-  List<String> selectedAnswers = [];
+  final List<String> _selectedAnswers = [];
   int currentIndex = 0;
 
   void answerQuestion(String answer) {
-    selectedAnswers.add(answer);
+    _selectedAnswers.add(answer);
     if (currentIndex < questions.length - 1) {
       setState(() {
         currentIndex++;
@@ -26,7 +26,7 @@ class _QuestionPageState extends State<QuestionPage> {
         context,
         MaterialPageRoute(
           builder: (context) => ResultPage(
-            selectedAnswers: selectedAnswers,
+            selectedAnswers: _selectedAnswers,
           ),
         ),
       );
@@ -35,7 +35,7 @@ class _QuestionPageState extends State<QuestionPage> {
 
   @override
   void dispose() {
-    selectedAnswers.clear();
+    _selectedAnswers.clear();
     super.dispose();
   }
 

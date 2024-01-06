@@ -7,7 +7,7 @@ class QuestionModel {
     required this.options,
   });
 
-  List<String> getShuffledAnswers() {
+  List<String> get shuffledAnswers {
     final shuffledList = List.of(options);
     shuffledList.shuffle();
     return shuffledList;
