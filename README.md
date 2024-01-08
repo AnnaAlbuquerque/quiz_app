@@ -1,16 +1,21 @@
-# example
+# Quiz App
 
-A new Flutter project.
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/AnnaAlbuquerque/quiz_app/blob/main/README-PT.md)
 
-## Getting Started
+Small Flutter project done during my Flutter Studies.
 
-This project is a starting point for a Flutter application.
+Specifically following Maximilian Schwarzmüller course "Flutter & Dart - The Complete Guide" available on Udemy.
 
-A few resources to get you started if this is your first Flutter project:
+## About the Application
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This project consists of a static quiz about Flutter.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Which goes through all the pre defined questions and at the end show the results.
+
+<img src="./assets/read_me/quiz_app.gif" height = "500">
+
+
+## Extra Information
+
+- This application were tested only on Android
+- All the interface is based on "Flutter & Dart - The Complete Guide" course, but I did some changes based on my preferences
